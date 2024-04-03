@@ -33,8 +33,6 @@ export default function AddTask({tasklist, setTasklist, clickexisted_task, setEx
         
 
     } // e ist das absenden Event - Wenn die onSubmit-Eigenschaft unten ausgelöst wird (d.h., wenn das Formular abgesendet wird), wird automatisch ein Ereignisobjekt erzeugt und an die handleSubmit-Funktion übergeben.
-
-  
   
     return (
     <section className="addTask">
