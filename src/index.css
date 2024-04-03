@@ -1,5 +1,13 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  list-style: none;
+
+}
+
+body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -11,3 +19,34 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root { /*shadow for boxen wie die Komponenten Header, AddTask, ShowTask*/
+  --box-shadow: rgba(255,255,255, 0.3) 0px 3px 24px 0px, rgba(255,255,255, 0.5) 0px 0px 0px 1px;
+
+  /*
+  rgba(0,0,0, 0.5) 0px 6px 24px 0px: Dies erzeugt einen Schatteneffekt, der schwarz (rgba(0,0,0)) mit 50% Transparenz (0.5) ist. Der Schatten ist horizontal nicht verschoben (0px), vertikal um 6px verschoben, hat eine Unschärfe von 24px und keinen Spread-Radius (0px).
+
+  rgba(0,0,0, 0.08) 0px 0px 0px 1px: Dies erzeugt einen sehr leichten, fast unsichtbaren Schatteneffekt, der schwarz (rgba(0,0,0)) mit 8% Transparenz (0.08) ist. Der Schatten ist nicht verschoben und hat keinen Unschärfe- oder Spread-Radius, aber er hat eine Breite von 1px.
+  */
+}
+
+/* themes */
+.light{
+  background-color: #FFFFFF;
+  transition: all 500ms;
+}
+
+.dark{
+  background-color: #000000;
+  transition: all 500ms;
+}
+
+.gOne{
+  background: linear-gradient(90deg, hsla(191, 75%, 60%, 1) 0%, hsla(248, 87%, 36%, 1) 100%);
+  transition: all 500ms;
+}
+.gTwo{
+  background: linear-gradient(235deg, #FFFFFF 0%, #000F25 100%), linear-gradient(180deg, #6100FF 0%, #000000 100%), linear-gradient(235deg, #FFA3AC 0%, #FFA3AC 40%, #00043C calc(40% + 1px), #00043C 60%, #005D6C calc(60% + 1px), #005D6C 70%, #00C9B1 calc(70% + 1px), #00C9B1 100%), linear-gradient(125deg, #FFA3AC 0%, #FFA3AC 40%, #00043C calc(40% + 1px), #00043C 60%, #005D6C calc(60% + 1px), #005D6C 70%, #00C9B1 calc(70% + 1px), #00C9B1 100%);
+  background-blend-mode: soft-light, screen, darken, normal;
+}
+

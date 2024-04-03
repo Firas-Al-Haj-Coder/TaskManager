@@ -1,8 +1,252 @@
 .App {
-  text-align: center;
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: auto;
+  padding: 5px 10px;
 }
 
-.App-logo {
+body {
+  background-color: #FFFFFF;
+  color: #525252;
+}
+
+/* Header Stile */
+ 
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 10px;
+  margin-bottom: 70px;
+  background-color: #00C9B1; /*ff7272 | 00C9B1*/
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+}
+
+header .logo { 
+  display: flex;
+  align-items: center;
+}
+
+header .logo img {
+  max-width: 60px;
+  cursor: pointer;
+}
+
+header .logo span {
+  font-size: 22px;
+  margin-left: 7px;
+  cursor: pointer;
+  color: #525252;
+}
+
+header .themeSelector span {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  margin-left: 5px;
+  cursor: pointer;
+  border: 1px solid #dfdfdf;
+} /* Themes Icons design */
+
+header .themeSelector .active{
+  height: 30px;
+  width: 30px;
+} /* vergößere das aktive Theme*/
+ 
+/* themes */
+.light, .light body {
+  background-color: #FFFFFF;
+  transition: all 500ms;
+}
+
+.dark, .dark body {
+  background-color: #000000;
+  transition: all 500ms;
+}
+
+.gOne, .gOne body{
+  background: linear-gradient(90deg, hsla(191, 75%, 60%, 1) 0%, hsla(248, 87%, 36%, 1) 100%);
+  transition: all 500ms;
+}
+.gTwo, .gTwo body{
+  background: linear-gradient(235deg, #FFFFFF 0%, #000F25 100%), linear-gradient(180deg, #6100FF 0%, #000000 100%), linear-gradient(235deg, #FFA3AC 0%, #FFA3AC 40%, #00043C calc(40% + 1px), #00043C 60%, #005D6C calc(60% + 1px), #005D6C 70%, #00C9B1 calc(70% + 1px), #00C9B1 100%), linear-gradient(125deg, #FFA3AC 0%, #FFA3AC 40%, #00043C calc(40% + 1px), #00043C 60%, #005D6C calc(60% + 1px), #005D6C 70%, #00C9B1 calc(70% + 1px), #00C9B1 100%);
+  background-blend-mode: soft-light, screen, darken, normal;
+  transition: all 500ms;
+
+}
+
+.gThree, .gThree body {
+  background: linear-gradient(125deg, #FFFFFF 0%, #000000 100%), linear-gradient(200deg, #FFD9E8 0%, #FFD9E8 50%, #DE95BA calc(50% + 1px), #DE95BA 60%, #7F4A88 calc(60% + 1px), #7F4A88 75%, #4A266A calc(75% + 1px), #4A266A 100%), linear-gradient(113deg, #FFD9E8 0%, #FFD9E8 40%, #DE95BA calc(40% + 1px), #DE95BA 50%, #7F4A88 calc(50% + 1px), #7F4A88 70%, #4A266A calc(70% + 1px), #4A266A 100%);
+  background-blend-mode: overlay, overlay, normal;
+  transition: all 500ms;
+
+}
+.gThree .addTask,.gThree .addTask button  {
+  background: #FFFFFF;
+  background-blend-mode: overlay, overlay, normal;
+  transition: all 500ms;
+
+}
+.gThree header {
+  background: #FFFFFF;
+  transition: all 500ms;
+
+}
+.gThree .showTask {
+  background: #402f78;
+  background-blend-mode: overlay, overlay, normal;
+  transition: all 500ms;
+
+}
+
+/* Addtask Comp */
+
+.addTask {
+  background-color: #000000;
+  padding: 20px 15px;
+  margin: 20px auto;
+  max-width: 500px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  box-shadow: var(--box-shadow);
+}
+
+.addTask form {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 7px;
+}
+.addTask form input {
+  flex-grow: 1;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #eaeaea5c;
+  background-color: #000000;
+  color: #eaeaeac8;
+}
+.addTask form button {
+  background-color: #00C9B1;
+  color: #000000;
+  padding: 5px 20px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.addTask form input:focus{
+  outline: 0.5px solid #03b056;
+}
+
+.addTask form button:hover {
+  background-color: #03b056;
+}
+
+/* showTask Fenster */
+.showTask {
+  padding: 20px 15px;
+  border-radius: 5px;
+  background-color: #000000; /* ff7272 | 00C9B1 */
+  box-shadow: var(--box-shadow);
+
+}
+
+.showTask .head{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10px 10px 10px;
+  border-bottom: 1px solid #dfdfdf;
+  margin-bottom: 10px;
+}
+
+.showTask .title {
+  color: #eaeaeac8;
+  font-size: 18px;
+  font-weight: 600;
+  user-select: none; /* User kann den Teil nicht mal auswählen*/
+}
+
+.showTask .lengthcount {
+  background-color: #dfdfdf;
+  color: #525252;
+  padding: 5px 10px;
+  border-radius: 50%;
+  margin-left: 10px;
+  user-select: none;
+}
+
+.showTask .clear_butt {
+  font-size: 16px;
+  padding: 5px 15px;
+  border-radius: 5px;
+  background-color:#0f6af3;
+  border: 1px solid #000000;
+  cursor: pointer;
+}
+.showTask .clear_butt:hover {
+  background-color: #1061db;
+}
+
+/* showTask Karten */
+.showTask ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  gap: 15px;
+} /*unorderedList box-ordering style*/
+
+.showTask ul li p {
+  display: flex;
+  flex-flow: column wrap;
+} /*damit name & zeit untereinander stehen können ( p in eigener flexbox)*/
+
+.showTask ul li {
+  background-color: #b2faf1;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 15px 10px;
+  gap: 5px; /*raum zwischen die spans und icons*/
+  border: 0px solid #00C9B1;
+  border-left: 5px solid #1365dfaf;
+  border-radius: 5px;
+}
+
+.showTask li .task_name{
+  font-size: 18px;
+  padding-bottom: 5px;
+}
+
+.showTask li .task_time{
+  font-size: 12px;
+  color: #737373;
+}
+.showTask i.bi-pencil{
+  font-size: 18px;
+  color: #1363DF;
+  cursor: pointer;
+}
+
+.showTask i.bi-trash{
+  font-size: 18px;
+  color: #D82148;
+  cursor: pointer;
+}
+
+
+/* Mobile Geräte */
+@media (max-width: 365px) {
+
+  .addTask form {
+    flex-flow: column wrap;
+  }
+
+}
+
+
+
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -35,4 +279,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
