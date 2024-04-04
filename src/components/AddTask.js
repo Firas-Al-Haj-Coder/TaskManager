@@ -11,7 +11,7 @@ export default function AddTask({tasklist, setTasklist, clickexisted_task, setEx
         
             // Wichtig hier ist bei der Aktualisierung eines Tasks/Objektes innerhalb eines anderen Objektes/Liste, ist dass
             // wir die Liste überarbeiten sollen und nicht den Task selbst sonst können wir nicht in React garantieren, dass Änderungen in der Tasklist sichtbar sind 
-            const selectedTask = tasklist.find((task) => task.id === clickexisted_task.id);
+            // const selectedTask = tasklist.find((task) => task.id === clickexisted_task.id);
             const updatedTask = { ...clickexisted_task, name: e.target.task.value };
             const updatedList = tasklist.map((innerTask) => innerTask.id === clickexisted_task.id ? updatedTask : innerTask); // task bleibt gleich wenns nicht gleiche ID hat sonst wird den alten innerTask überschrieben 
             setExistedTask({}); // ist überarbeitet worden wieder dann zurücksetzen;
